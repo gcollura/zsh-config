@@ -12,6 +12,8 @@ alias ....='cd ../../../'
 alias df='df -h'
 alias free='free -h'
 
+alias zshrc="$EDITOR ~/.zsh/zshrc" # Quick access to the ~/.zshrc file
+
 #Show progress while file is copying
 # Rsync options are:
 # -p - preserve permissions

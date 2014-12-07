@@ -2,13 +2,13 @@
 # Completion
 ##
 autoload -U compinit; compinit
-zmodload -i zsh/complist        
+zmodload -i zsh/complist
 setopt menu_complete 		# select the first entry
 unsetopt flowcontrol
 setopt alwayslastprompt
 setopt hash_list_all            # hash everything before completion
 setopt completealiases          # complete alisases
-setopt always_to_end            # when completing from the middle of a word, move the cursor to the end of the word    
+setopt always_to_end            # when completing from the middle of a word, move the cursor to the end of the word
 setopt list_types
 setopt complete_in_word         # allow completion from within a word/phrase
 setopt correct                  # spelling correction for commands
@@ -38,3 +38,5 @@ zstyle ':completion:*:killall:*' force-list always
 users=(random root)           # because I don't care about others
 zstyle ':completion:*' users $users
 
+# Make zsh know about hosts already accessed by SSH
+zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'

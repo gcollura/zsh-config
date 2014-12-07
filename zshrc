@@ -2,13 +2,13 @@
 if [ -n "$ZSH" ] ; then
     ZSH=$HOME/.zsh
 fi
+source $ZSH/key-bindings.zsh
 source $ZSH/plugins.zsh
 source $ZSH/colors.zsh
 source $ZSH/functions.zsh
 source $ZSH/prompt.zsh
 source $ZSH/completion.zsh
 source $ZSH/aliases.zsh
-source $ZSH/key-bindings.zsh
 
 autoload -U zsh-mime-setup
 zsh-mime-setup
@@ -72,3 +72,5 @@ export ECLIPSE_HOME=/opt/eclipse
 
 export PATH=$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/.local/bin
 export PATH=$PATH:$ANDROID_HOME/tools
+
+eval $(dircolors -b $HOME/.dircolors.luna)
