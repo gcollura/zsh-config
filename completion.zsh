@@ -23,11 +23,13 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}       # colorz !
 zstyle ':completion:*::::' completer _expand _complete _ignored _approximate # list of completers to use
 
 # sections completion !
-zstyle ':completion:*' verbose yes
+zstyle ':completion:*' verbose yes 
+zstyle ':completion:*' format '%B---- %d%b'
 zstyle ':completion:*:descriptions' format $'\e[00;34m%d'
-zstyle ':completion:*:messages' format $'\e[00;31m%d'
-zstyle ':completion:*' group-name ''
+zstyle ':completion:*:messages' format $'\e[00;31m%d ---'
 zstyle ':completion:*:manuals' separate-sections true
+zstyle ':completion:*:warnings' format 'Too bad there is nothing'
+zstyle ':completion:*' group-name ''
 
 zstyle ':completion:*:processes' command 'ps -au$USER'
 zstyle ':completion:*:*:kill:*' menu yes select

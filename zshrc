@@ -2,13 +2,6 @@
 if [ -n "$ZSH" ] ; then
     ZSH=$HOME/.zsh
 fi
-source $ZSH/key-bindings.zsh
-source $ZSH/plugins.zsh
-source $ZSH/colors.zsh
-source $ZSH/functions.zsh
-source $ZSH/prompt.zsh
-source $ZSH/completion.zsh
-source $ZSH/aliases.zsh
 
 autoload -U zsh-mime-setup
 zsh-mime-setup
@@ -74,3 +67,12 @@ export PATH=$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/s
 export PATH=$PATH:$ANDROID_HOME/tools
 
 eval $(dircolors -b $HOME/.dircolors.luna)
+
+# Load modules
+source $ZSH/key-bindings.zsh
+source $ZSH/plugins.zsh
+source $ZSH/colors.zsh
+source $ZSH/functions.zsh
+source $ZSH/prompt.zsh
+source $ZSH/aliases.zsh
+source $ZSH/completion.zsh
