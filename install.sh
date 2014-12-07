@@ -1,9 +1,7 @@
 #!/bin/bash
 
 echo "Installing zsh-config"
-if [ ! -d $HOME/.zsh ] ; then
-    mkdir $HOME/.zsh
-else
+if [ -d $HOME/.zsh ] ; then
     mv $HOME/.zsh $HOME/.zsh.old
 fi
 ln -s $PWD $HOME/.zsh
