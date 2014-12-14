@@ -1,15 +1,13 @@
 # get the name of the branch we are on
 function git_prompt_info() {
-  if [[ "$(command git config --get oh-my-zsh.hide-status 2>/dev/null)" != "1" ]]; then
     ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
     ref=$(command git rev-parse --short HEAD 2> /dev/null) || return 0
     echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref#refs/heads/}$(parse_git_dirty)$ZSH_THEME_GIT_PROMPT_SUFFIX"
-  fi
 }
 
 
 # Checks if working tree is dirty
-parse_git_dirty() {
+function parse_git_dirty() {
   local STATUS=''
   local FLAGS
   FLAGS=('--porcelain')
@@ -30,7 +28,7 @@ parse_git_dirty() {
 }
 
 # get the difference between the local and remote branches
-git_remote_status() {
+function git_remote_status() {
     remote=${$(command git rev-parse --verify ${hook_com[branch]}@{upstream} --symbolic-full-name 2>/dev/null)/refs\/remotes\/}
     if [[ -n ${remote} ]] ; then
         ahead=$(command git rev-list ${hook_com[branch]}@{upstream}..HEAD 2>/dev/null | wc -l)
@@ -75,7 +73,7 @@ function git_prompt_long_sha() {
 }
 
 # Get the status of the working tree
-git_prompt_status() {
+function git_prompt_status() {
   INDEX=$(command git status --porcelain -b 2> /dev/null)
   STATUS=""
   if $(echo "$INDEX" | grep -E '^\?\? ' &> /dev/null); then

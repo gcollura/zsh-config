@@ -1,6 +1,8 @@
 # Yay! High voltage and arrows!
 # get the name of the branch we are on
 
+setopt prompt_subst # Allow for functions in the prompt
+
 ZSH_VIM_MODE=false
 if [ "$ZSH_VIM_MODE" = "true" ] ; then
     bindkey -v      # vi mode
@@ -29,5 +31,4 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 local ret_status="%(?:%{$fg[white]%}→ :%{$fg[red]%}→ %s)"
 
-PROMPT="%{$fg[cyan]%}%~%{$reset_color%}% $(git_prompt_info)%{$fg[cyan]%}%{$reset_color%}$vim_mode ${ret_status}%{$reset_colors%}"
-
+PROMPT='%{$fg[cyan]%}%~%{$reset_color%}% $(git_prompt_info)%{$fg[cyan]%}%{$reset_color%}$vim_mode ${ret_status}%{$reset_colors%}'
