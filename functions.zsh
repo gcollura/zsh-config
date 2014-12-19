@@ -104,3 +104,11 @@ function trw () {
     fi
     tmux rename-window "$window"
 }
+
+function sensors () {
+    # alias sensors='sensors && aticonfig --od-gettemperature'
+    command sensors
+    if type aticonfig > /dev/null ; then
+        command aticonfig --od-gettemperature
+    fi
+}

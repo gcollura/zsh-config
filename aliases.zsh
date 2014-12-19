@@ -40,7 +40,7 @@ alias build='mkdir build ; cd build && cmake .. && make ; cd .. && ls'
 alias cpuu="ps -e -o pcpu,cpu,nice,state,cputime,args --sort pcpu | sed '/^ 0.0 /d'"
 alias memu='ps -e -o rss=,args= | sort -b -k1,1n | pr -TW$COLUMNS'
 alias pg='ps aux | grep'  #requires an argument
-alias sensors='sensors && aticonfig --od-gettemperature'
+# alias sensors='sensors && aticonfig --od-gettemperature'
 # What's gobbling the memory?
 alias wotgobblemem='ps -o time,ppid,pid,nice,pcpu,pmem,user,comm -A | sort -n -k 6 | tail -15'
 
