@@ -6,5 +6,7 @@ unset TMPDIR
 
 source $ZSH/plugins/git.zsh
 source $ZSH/plugins/history-substring-search.zsh
-source $ZSH/plugins/tmux.zsh
+if type "tmux" > /dev/null ; then
+    source $ZSH/plugins/tmux.zsh
+fi
 source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
