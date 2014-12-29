@@ -10,5 +10,5 @@ if type "tmux" > /dev/null ; then
     source $ZSH/plugins/tmux.zsh
 fi
 source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-BASE16_SHELL="$ZSH/plugins/base16-shell/base16-chalk.dark.sh"
+BASE16_SHELL="$ZSH/plugins/base16-shell/base16-monokai.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
