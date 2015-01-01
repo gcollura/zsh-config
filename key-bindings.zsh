@@ -11,11 +11,19 @@ fi
 
 if [[ "${terminfo[kcuu1]}" != "" ]]; then
     bindkey "${terminfo[kcuu1]}" up-line-or-search # start typing + [Up-Arrow] - fuzzy find history forward
+    bindkey "^K" up-line-or-search # more touch-type friendly
 fi
 if [[ "${terminfo[kcud1]}" != "" ]]; then
     bindkey "${terminfo[kcud1]}" down-line-or-search # start typing + [Down-Arrow] - fuzzy find history backward
+    bindkey "^J" down-line-or-search # more touch-type friendly
 fi
 
 bindkey ' ' magic-space # [Space] - do history expansion
 bindkey '^[[1;5C' forward-word # [Ctrl-RightArrow] - move forward one word
 bindkey '^[[1;5D' backward-word # [Ctrl-LeftArrow] - move backward one word
+
+# Make vi mode behave sanely
+bindkey "^?" backward-delete-char
+bindkey "^W" backward-kill-word
+# bindkey "^H" backward-delete-char      # Control-h also deletes the previous char
+bindkey "^U" backward-kill-line
