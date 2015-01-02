@@ -11,11 +11,9 @@ fi
 
 if [[ "${terminfo[kcuu1]}" != "" ]]; then
     bindkey "${terminfo[kcuu1]}" up-line-or-search # start typing + [Up-Arrow] - fuzzy find history forward
-    bindkey "^K" up-line-or-search # more touch-type friendly
 fi
 if [[ "${terminfo[kcud1]}" != "" ]]; then
     bindkey "${terminfo[kcud1]}" down-line-or-search # start typing + [Down-Arrow] - fuzzy find history backward
-    bindkey "^J" down-line-or-search # more touch-type friendly
 fi
 
 bindkey ' ' magic-space # [Space] - do history expansion
