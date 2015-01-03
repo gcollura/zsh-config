@@ -49,15 +49,13 @@ unsetopt hup                    # no hup signal at shell exit
 unsetopt ignore_eof             # do not exit on end-of-file
 unsetopt list_beep              # no bell on ambiguous completion
 unsetopt rm_star_silent         # ask for confirmation for `rm *' or `rm path/*'
-if type setxkbmap > /dev/null && [[ -z "$DISPLAY" ]]; then
+if type setxkbmap > /dev/null && [[ -n "$DISPLAY" ]]; then
     setxkbmap -option compose:ralt  # compose-key
 fi
 
-function set_title() {
-    print -Pn "\e]0;%n@%M: %~\a"    # terminal title
+function precmd {
+    print -Pn '\e]0;%M:%~\a'    # terminal title: hostname:~/path/to/dir
 }
-chpwd_functions=(set_title)
-set_title()
 
 # Uses the command-not-found package zsh support
 # as seen in http://www.porcheron.info/command-not-found-for-zsh/
