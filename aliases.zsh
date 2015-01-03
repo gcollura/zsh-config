@@ -5,8 +5,12 @@ alias ll='ls -lh'
 alias la='ls -lAh'
 
 alias mdstat='cat /proc/mdstat'
-alias ...='cd ../../'
-alias ....='cd ../../../'
+alias -g ...='../../'
+alias -g ....='../../../'
+
+# Directory Stack
+alias dirs='dirs -v'
+alias pd='popd'
 
 # be more human
 alias df='df -h'

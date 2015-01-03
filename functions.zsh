@@ -1,4 +1,4 @@
-function take() {
+function take () {
     mkdir -p $1
     cd $1
 }
@@ -13,13 +13,17 @@ function take() {
 # 0 if the alias was found,
 # 1 if it does not exist
 #
-function alias_value() {
+function alias_value () {
     alias "$1" | sed "s/^$1='\(.*\)'$/\1/"
     test $(alias "$1")
 }
 
 # Get ubuntu daily release
-function get-daily() {
+function get-daily () {
+    if type zsync > /dev/null ; then
+        echo "zsyncing $1..."
+        zsync "http://cdimage.ubuntu.com/daily-live/current/$1-desktop-amd64.iso.zsync"
+    fi
     if [[ -n $1 ]]; then
         echo "wgetting $1..."
         wget -c "http://cdimage.ubuntu.com/daily-live/current/$1-desktop-amd64.iso"
@@ -28,7 +32,7 @@ function get-daily() {
     fi
 }
 
-function compile() {
+function compile () {
     local compiler
     if [[ $1 == 'c' ]]; then
         compiler="clang"
@@ -110,5 +114,16 @@ function sensors () {
     command sensors
     if type aticonfig > /dev/null ; then
         command aticonfig --od-gettemperature
+    fi
+}
+
+function cd () {
+    # cd /etc/fstab
+    if [[ -f ${1} ]]; then
+        [[ ! -e ${1:h} ]] && return 1
+        print "Correcting ${1} to ${1:h}"
+        builtin cd ${1:h}
+    else
+        builtin cd ${1}
     fi
 }

@@ -17,9 +17,19 @@ setopt hist_ignore_all_dups     # no duplicate
 unsetopt hist_ignore_space      # ignore space prefixed commands
 setopt hist_reduce_blanks       # trim blanks
 setopt hist_verify              # show before executing history commands
-setopt inc_append_history       # add commands as they are typed, don't wait until shell exit 
+setopt inc_append_history       # add commands as they are typed, don't wait until shell exit
 setopt share_history            # share hist between sessions
 setopt bang_hist                # !keyword
+
+##
+# Directory Stack
+##
+DIRSTACKSIZE=8                  # limit size of the stack
+setopt autopushd                # change behavior of 'cd' to 'pushd'
+setopt pushdsilent              # disable messages when push directories
+setopt pushdminus               # because - is easier to type than +
+setopt pushdignoredups          # ignore dupes
+setopt pushdtohome              # pushd behaves like 'pushd $HOME'
 
 ##
 # Various
@@ -40,7 +50,12 @@ unsetopt ignore_eof             # do not exit on end-of-file
 unsetopt list_beep              # no bell on ambiguous completion
 unsetopt rm_star_silent         # ask for confirmation for `rm *' or `rm path/*'
 setxkbmap -option compose:ralt  # compose-key
-print -Pn "\e]0; %n@%M: %~\a"   # terminal title
+
+function set_title() {
+    print -Pn "\e]0;%n@%M: %~\a"    # terminal title
+}
+chpwd_functions=(set_title)
+set_title()
 
 # Uses the command-not-found package zsh support
 # as seen in http://www.porcheron.info/command-not-found-for-zsh/
@@ -51,7 +66,7 @@ print -Pn "\e]0; %n@%M: %~\a"   # terminal title
 [[ -e /usr/share/doc/pkgfile/command-not-found.zsh ]] && source /usr/share/doc/pkgfile/command-not-found.zsh
 
 # Customize to your needs...
-export EDITOR='gvim -f'
+export EDITOR='vim'
 
 # Android
 export ANDROID_HOME=$HOME/.android/sdk
