@@ -49,7 +49,9 @@ unsetopt hup                    # no hup signal at shell exit
 unsetopt ignore_eof             # do not exit on end-of-file
 unsetopt list_beep              # no bell on ambiguous completion
 unsetopt rm_star_silent         # ask for confirmation for `rm *' or `rm path/*'
-setxkbmap -option compose:ralt  # compose-key
+if type setxkbmap > /dev/null && [[ -z "$DISPLAY" ]]; then
+    setxkbmap -option compose:ralt  # compose-key
+fi
 
 function set_title() {
     print -Pn "\e]0;%n@%M: %~\a"    # terminal title
@@ -81,7 +83,10 @@ export ECLIPSE_HOME=/opt/eclipse
 export PATH=$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$HOME/.local/bin
 export PATH=$PATH:$ANDROID_HOME/tools
 
-eval $(dircolors -b $HOME/.dircolors.luna)
+DIRCOLORS=$HOME/.dircolors.luna
+if [[ -f $DIRCOLORS ]]; then
+    eval $(dircolors -b $HOME/.dircolors.luna)
+fi
 
 # Load modules
 source $ZSH/key-bindings.zsh
