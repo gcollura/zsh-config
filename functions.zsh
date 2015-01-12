@@ -127,3 +127,7 @@ function cd () {
         builtin cd ${1}
     fi
 }
+
+function push-key () {
+  ssh $1 "echo '`cat ~/.ssh/id_rsa.pub`' >> ~/.ssh/authorized_keys"
+}
