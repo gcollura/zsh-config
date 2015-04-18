@@ -78,7 +78,7 @@ export ANDROID_NDK_HOST=linux-x86_64
 # Java
 export ECLIPSE_HOME=/opt/eclipse
 
-export PATH=$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/.local/bin
+export PATH=$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 export PATH=$PATH:$ANDROID_HOME/tools
 
 DIRCOLORS=$HOME/.dircolors.luna

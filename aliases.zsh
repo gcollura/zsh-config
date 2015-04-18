@@ -53,6 +53,7 @@ alias wotgobblemem='ps -o time,ppid,pid,nice,pcpu,pmem,user,comm -A | sort -n -k
 alias todo="python ~/.scripts/todo.py"
 alias xbox-controller="sudo xboxdrv -s --controller-slot"
 alias :q="exit"
+alias e="$EDITOR"
 alias ccat='pygmentize -O bg=dark'
 alias glog='git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"'
 alias lldb='lldb-3.5'
