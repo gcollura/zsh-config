@@ -31,4 +31,6 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 local ret_status="%(?:%{$fg[white]%}→ :%{$fg[red]%}→ %s)"
 
-PROMPT='%{$fg[blue]%}%~%{$reset_color%}% $(git_prompt_info)%{$fg[cyan]%}%{$reset_color%} $vim_mode ${ret_status}%{$reset_colors%}'
+PROMPT='%{$fg[blue]%}%~%{$reset_color%}% $(git_prompt_info)%{$fg[cyan]%}%{$reset_color%} $vim_mode ${ret_status}%{$reset_colors%} '
+
+RPROMPT='%{$fg[red]%}$(nvm_prompt_info)%{$reset_color%}'

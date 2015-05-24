@@ -4,7 +4,10 @@ ZSH_TMUX_ITERM2=false
 # sometimes TMPDIR is set to a certain value, so disable this
 unset TMPDIR
 
+fpath=($ZSH/plugins/completions $fpath)
+
 source $ZSH/plugins/git.zsh
+source $ZSH/plugins/nvm.zsh
 source $ZSH/plugins/history-substring-search.zsh
 if type "tmux" > /dev/null ; then
     source $ZSH/plugins/tmux.zsh
