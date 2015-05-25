@@ -29,8 +29,11 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[yellow]%}⚡%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
+ZSH_THEME_NVM_PROMPT_PREFIX="%{$reset_color%}%{$fg[red]%}"
+ZSH_THEME_NVM_PROMPT_SUFFIX="%{$reset_color%}"
+
 local ret_status="%(?:%{$fg[white]%}→ :%{$fg[red]%}→ %s)"
 
 PROMPT='%{$fg[blue]%}%~%{$reset_color%}% $(git_prompt_info)%{$fg[cyan]%}%{$reset_color%} $vim_mode ${ret_status}%{$reset_colors%}'
 
-RPROMPT='%{$fg[red]%}$(nvm_prompt_info)%{$reset_color%}'
+RPROMPT='$(nvm_prompt_info)'
