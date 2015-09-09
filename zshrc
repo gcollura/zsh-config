@@ -88,8 +88,8 @@ fi
 
 # Load modules
 source $ZSH/key-bindings.zsh
-source $ZSH/completion.zsh
 source $ZSH/plugins.zsh
+source $ZSH/completion.zsh
 source $ZSH/colors.zsh
 source $ZSH/functions.zsh
 source $ZSH/prompt.zsh

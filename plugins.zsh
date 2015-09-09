@@ -4,8 +4,6 @@ ZSH_TMUX_ITERM2=false
 # sometimes TMPDIR is set to a certain value, so disable this
 unset TMPDIR
 
-fpath=($ZSH/plugins/completions $fpath)
-
 source $ZSH/plugins/git.zsh
 source $ZSH/plugins/nvm.zsh
 if hash bower >& /dev/null ; then
@@ -18,3 +16,5 @@ fi
 source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 BASE16_SHELL="$ZSH/plugins/base16-shell/base16-one.dark.sh"
 [[ -s $BASE16_SHELL ]] && [[ -z "$TMUX" ]] && source $BASE16_SHELL
+
+fpath=($ZSH/plugins/completions $fpath)
