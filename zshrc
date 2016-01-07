@@ -66,7 +66,11 @@ function precmd {
 [[ -e /usr/share/doc/pkgfile/command-not-found.zsh ]] && source /usr/share/doc/pkgfile/command-not-found.zsh
 
 # Customize to your needs...
-export EDITOR='vim'
+if type nvim > /dev/null; then
+    export EDITOR='nvim'
+else
+    export EDITOR='vim'
+fi
 
 # Android
 export ANDROID_HOME=$HOME/.android/sdk

@@ -83,7 +83,7 @@ function ssh () {
         return
     fi
     # The hostname is the last parameter (i.e. ${(P)#})
-    local remote=${${(P)#}%.*}
+    local remote=${${(P)#}}
     local old_name="$(tmux display-message -p '#W')"
     local renamed=0
     # Save the current name
