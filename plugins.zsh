@@ -14,6 +14,8 @@ if hash tmux >& /dev/null ; then
     source $ZSH/plugins/tmux.zsh
 fi
 source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $ZSH/plugins/safe-paste.zsh
+
 BASE16_SHELL="$ZSH/plugins/base16-shell/base16-one.dark.sh"
 [[ -s $BASE16_SHELL ]] && [[ -z "$TMUX" ]] && source $BASE16_SHELL
 
