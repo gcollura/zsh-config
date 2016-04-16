@@ -55,3 +55,14 @@ alias :q="exit"
 alias e="$EDITOR"
 alias ccat='pygmentize -O bg=dark'
 alias glog='git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"'
+
+# PHP
+alias xdebug-on='sudo php5enmod -s cli xdebug'
+alias xdebug-off='sudo php5dismod -s cli xdebug'
+
+# directory shortcut ~ named directories
+hash -d projects="$HOME/Projects"
+hash -d university="$HOME/Projects/university"
+hash -d zero11="$HOME/Projects/zero11"
+hash -d desktop="$HOME/Desktop"
+hash -d downloads="$HOME/Downloads"
