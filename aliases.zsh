@@ -66,3 +66,9 @@ hash -d university="$HOME/Projects/university"
 hash -d zero11="$HOME/Projects/zero11"
 hash -d desktop="$HOME/Desktop"
 hash -d downloads="$HOME/Downloads"
+
+# Docker
+alias sen='docker run --rm --privileged -v /var/run/docker.sock:/run/docker.sock -it -e TERM tomastomecek/sen'
+alias docker-update-images='docker images --format "{{.Repository}}" | xargs -L1 docker pull'
+alias docker-dangling-images='docker images --filter "dangling=true"'
+alias docker-remove-dangling-images='docker rmi $(docker images -f "dangling=true" -q)'
