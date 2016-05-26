@@ -54,7 +54,10 @@ alias xbox-controller="sudo xboxdrv -s --controller-slot"
 alias :q="exit"
 alias e="$EDITOR"
 alias ccat='pygmentize -O bg=dark'
+
+# Git
 alias glog='git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"'
+alias git-clean-all='git clean -fXd'
 
 # PHP
 alias xdebug-on='sudo php5enmod -s cli xdebug'
