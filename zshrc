@@ -83,7 +83,10 @@ export ANDROID_NDK_HOST=linux-x86_64
 export ECLIPSE_HOME=/opt/eclipse
 
 export PATH=$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-export PATH=$PATH:$ANDROID_HOME/tools
+if [[ -d $ANDROID_HOME ]]; then
+    export PATH=$PATH:$ANDROID_HOME/tools
+    export PATH=$PATH:$ANDROID_HOME/platform-tools
+fi
 
 DIRCOLORS=$HOME/.dircolors.luna
 if [[ -f $DIRCOLORS ]]; then

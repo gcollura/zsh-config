@@ -69,6 +69,9 @@ hash -d university="$HOME/Projects/university"
 hash -d zero11="$HOME/Projects/zero11"
 hash -d desktop="$HOME/Desktop"
 hash -d downloads="$HOME/Downloads"
+if [ -d "$HOME/ownCloud" ]; then
+    hash -d owncloud="$HOME/ownCloud"
+fi
 
 # Docker
 alias sen='docker run --rm --privileged -v /var/run/docker.sock:/run/docker.sock -it -e TERM tomastomecek/sen'
