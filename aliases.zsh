@@ -78,3 +78,5 @@ alias sen='docker run --rm --privileged -v /var/run/docker.sock:/run/docker.sock
 alias docker-update-images='docker images --format "{{.Repository}}" | xargs -L1 docker pull'
 alias docker-dangling-images='docker images --filter "dangling=true"'
 alias docker-remove-dangling-images='docker rmi $(docker images -f "dangling=true" -q)'
+alias docker-clean-volumes='docker volume ls -qf dangling=true | xargs -r docker volume rm'
+alias docker-clean-containers='docker ps --filter status=dead --filter status=exited -aq | xargs -r docker rm -v'
