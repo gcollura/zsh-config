@@ -88,9 +88,9 @@ if [[ -d $ANDROID_HOME ]]; then
     export PATH=$PATH:$ANDROID_HOME/platform-tools
 fi
 
-DIRCOLORS=$HOME/.dircolors.luna
+DIRCOLORS=$HOME/.dircolors
 if [[ -f $DIRCOLORS ]]; then
-    eval $(dircolors -b $HOME/.dircolors.luna)
+    eval $(dircolors -b $HOME/.dircolors)
 fi
 
 # Load modules

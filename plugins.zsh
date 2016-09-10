@@ -16,7 +16,7 @@ fi
 source $ZSH/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # source $ZSH/plugins/safe-paste.zsh
 
-BASE16_SHELL="$ZSH/plugins/base16-shell/base16-one.dark.sh"
+BASE16_SHELL="$ZSH/plugins/base16-shell/scripts/base16-dracula.dark.sh"
 [[ -s $BASE16_SHELL ]] && [[ -z "$TMUX" ]] && source $BASE16_SHELL
 
 fpath=($ZSH/plugins/completions $fpath)
