@@ -8,7 +8,6 @@ alias tl='tmux list-sessions'
 
 # Only run if tmux is actually installed
 if hash tmux >& /dev/null ; then
-then
     # Configuration variables
     #
     # Automatically start tmux
