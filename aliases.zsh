@@ -69,6 +69,7 @@ hash -d university="$HOME/Projects/university"
 hash -d zero11="$HOME/Projects/zero11"
 hash -d desktop="$HOME/Desktop"
 hash -d downloads="$HOME/Downloads"
+hash -d eurecom="$HOME/Projects/eurecom"
 if [ -d "$HOME/ownCloud" ]; then
     hash -d owncloud="$HOME/ownCloud"
 fi

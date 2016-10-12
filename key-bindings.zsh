@@ -16,7 +16,9 @@ bindkey '^[[1;5C' forward-word # [Ctrl-RightArrow] - move forward one word
 bindkey '^[[1;5D' backward-word # [Ctrl-LeftArrow] - move backward one word
 
 # Make vi mode behave sanely
-bindkey "^?" backward-delete-char
-bindkey "^W" backward-kill-word
-bindkey "^H" backward-delete-char      # Control-h also deletes the previous char
-bindkey "^U" backward-kill-line
+bindkey '^?' backward-delete-char
+bindkey '^W' backward-kill-word
+bindkey '^H' backward-delete-char      # Control-h also deletes the previous char
+bindkey '^U' backward-kill-line
+
+bindkey '^R' history-incremental-search-backward
