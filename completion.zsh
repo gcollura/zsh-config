@@ -13,17 +13,20 @@ setopt list_types
 setopt complete_in_word         # allow completion from within a word/phrase
 setopt correct                  # spelling correction for commands
 setopt list_ambiguous           # complete as much of a completion until it gets ambiguous.
+setopt autocd cdablevars
 unlimit
 
 zstyle ':completion::complete:*' use-cache on               # completion caching, use rehash to clear
+zstyle ':completion::complete:*' rehash true
 zstyle ':completion:*' cache-path ~/.zsh/cache              # cache path
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'   # ignore case
 zstyle ':completion:*' menu select=2                        # menu if nb items > 2
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}       # colorz !
 zstyle ':completion:*::::' completer _expand _complete _ignored _approximate # list of completers to use
+zstyle ':completion:*:functions' ignored-patterns '_*'
 
 # sections completion !
-zstyle ':completion:*' verbose yes 
+zstyle ':completion:*' verbose yes
 zstyle ':completion:*' format '%B---- %d%b'
 zstyle ':completion:*:descriptions' format $'\e[00;34m%d'
 zstyle ':completion:*:messages' format $'\e[00;31m%d ---'

@@ -53,6 +53,8 @@ if type setxkbmap > /dev/null && [[ -n "$DISPLAY" ]]; then
     setxkbmap -option compose:ralt  # compose-key
 fi
 
+autoload zmv
+
 function precmd {
     print -Pn '\e]0;%M:%~\a'    # terminal title: hostname:~/path/to/dir
 }
